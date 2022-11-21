@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom"
 import EyeIcon from "../assets/EyeIcon.jsx"
+import Layout from "../components/Layout.jsx"
 import { nameList } from '../helpers/db.js'
 import './TesterList.css'
 const TesterList = () => {
   return (
-    <div className="">
+    <Layout>
       <div className="d-flex justify-content-center tester__list align-items-center">
-        <div className=" display-4">
+        <div className="display-4">
           {
             nameList.map((item) => {
               return <NavLink
@@ -20,10 +21,9 @@ const TesterList = () => {
             })
           }
         </div>
-
       </div>
+    </Layout>
 
-    </div>
   )
 }
 

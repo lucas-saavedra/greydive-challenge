@@ -1,8 +1,9 @@
-import { NavLink, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { getById } from "../helpers/db";
 import VideoSection from "../components/VideoSection";
 import TaskList from "../components/Tasks/TaskList";
 import BackButton from "../components/BackButton";
+import Layout from "../components/Layout";
 
 const TesterView = () => {
   const { id } = useParams();
@@ -26,8 +27,8 @@ const TesterView = () => {
   const { cliente, linkVideo, transcripcion, escenario, preguntas } = tester;
 
   return (
-    <>
-      <div className="text-white container h-100" >
+    <Layout>
+      <div className="text-white" >
         <BackButton className="btn btn-outline-light my-2" />
         <h1 className="pt-3">
           Nombre del cliente: {cliente}
@@ -38,7 +39,7 @@ const TesterView = () => {
         <VideoSection transcripcion={transcripcion} linkVideo={linkVideo} />
         <TaskList escenario={escenario} preguntas={preguntas} />
       </div >
-    </>
+    </Layout>
   )
 }
 
